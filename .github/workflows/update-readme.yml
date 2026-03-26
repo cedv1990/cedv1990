@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Fetch GitHub Stats
         run: |
@@ -21,6 +21,7 @@ jobs:
 
       - name: Commit & Push Changes
         run: |
+          git pull
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add github-stats-1.svg github-stats-2.svg github-streak.svg github-trophies.svg
