@@ -14,7 +14,7 @@ jobs:
 
       - name: Fetch GitHub Stats
         run: |
-          curl -o github-stats-1.svg "https://github-readme-stats.vercel.app/api?username=${{ github.actor }}&include_all_commits=true&count_private=true&theme=react&show_icons=true&token=${{ secrets.GH_TOKEN }}"
+          curl -o github-stats-1.svg "${{ secrets.API_STATS }}/?username=${{ github.actor }}&include_all_commits=true&count_private=true&theme=react&show_icons=true&token=${{ secrets.GH_TOKEN }}"
           curl -o github-stats-2.svg "https://github-readme-stats.vercel.app/api/top-langs?username=${{ github.actor }}&include_all_commits=true&count_private=true&layout=compact&theme=city_lights&token=${{ secrets.GH_TOKEN }}"
           curl -o github-streak.svg "https://github-readme-streak-stats.herokuapp.com/?user=${{ github.actor }}&theme=dark&hide_border=false&token=${{ secrets.GH_TOKEN }}"
           curl -o github-trophies.svg "https://github-profile-trophy.vercel.app/?username=${{ github.actor }}&theme=algolia&no-frame=false&no-bg=false&margin-w=4&token=${{ secrets.GH_TOKEN }}"
